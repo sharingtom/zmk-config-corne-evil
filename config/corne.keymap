@@ -258,6 +258,27 @@
         };
     };
 
+    // Add Key Overrides for Alt+Tab Behavior
+    key_overrides {
+        compatible = "zmk,key-overrides";
+
+        // J -> Alt+Tab when F is held
+        key_override_alt_tab {
+            compatible = "zmk,key-override";
+            bindings = <&kp TAB>;
+            key = <&kp J>;
+            modifiers = <(MOD_LALT)>;
+        };
+
+        // K -> Alt+Shift+Tab when F is held
+        key_override_alt_shift_tab {
+            compatible = "zmk,key-override";
+            bindings = <&kp LSHFT &kp TAB>;
+            key = <&kp K>;
+            modifiers = <(MOD_LALT)>;
+        };
+    };
+
     conditional_layers {
         compatible = "zmk,conditional-layers";
 
