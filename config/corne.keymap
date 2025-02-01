@@ -185,10 +185,10 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp E     &kp R           &kp T        &kp Y        &kp U      &kp I         &kp O    &kp P     &kp BACKSPACE
-&kp LSHFT  &kp A  &kp S  &kp D     &mt LEFT_ALT F  &kp G        &kp H        &kp J      &kp K         &kp L    &kp SEMI  &kp SQT
-&kp LCTRL  &kp Z  &kp X  &kp C     &kp V           &kp B        &kp N        &kp M      &kp COMMA     &kp DOT  &kp FSLH  &kp RSHFT
-                         &kp LGUI  &mo 1           &kp SPACE    &lt 5 ENTER  &lt 2 TAB  &kp LEFT_ALT
+&kp TAB    &kp Q  &kp W  &kp E     &kp R       &kp T        &kp Y        &kp U      &kp I         &kp O    &kp P     &kp BACKSPACE
+&kp LSHFT  &kp A  &kp S  &kp D     &mt LALT F  &kp G        &kp H        &kp J      &kp K         &kp L    &kp SEMI  &kp SQT
+&kp LCTRL  &kp Z  &kp X  &kp C     &kp V       &kp B        &kp N        &kp M      &kp COMMA     &kp DOT  &kp FSLH  &kp RSHFT
+                         &kp LGUI  &mo 1       &kp SPACE    &lt 5 ENTER  &lt 2 TAB  &kp LEFT_ALT
             >;
         };
 
@@ -259,10 +259,12 @@
     };
 
     // Add Key Overrides for Alt+Tab Behavior
+
     key_overrides {
         compatible = "zmk,key-overrides";
 
         // J -> Alt+Tab when F is held
+
         key_override_alt_tab {
             compatible = "zmk,key-override";
             bindings = <&kp TAB>;
@@ -271,6 +273,7 @@
         };
 
         // K -> Alt+Shift+Tab when F is held
+
         key_override_alt_shift_tab {
             compatible = "zmk,key-override";
             bindings = <&kp LSHFT &kp TAB>;
