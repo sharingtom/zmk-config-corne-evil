@@ -247,10 +247,10 @@
 
         EVL {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans        &trans     &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans        &trans     &trans  &trans
-                        &trans  &trans  &trans    &trans    &trans    &trans
+&trans  &trans           &kp LC(LEFT)  &kp LC(RIGHT)  &trans         &trans    &trans    &trans         &kp LC(LS(TAB))  &kp LC(TAB)  &trans     &trans
+&trans  &kp LA(LC(TAB))  &kp LC(TAB)   &kp PAGE_UP    &kp PAGE_DOWN  &trans    &kp LEFT  &kp DOWN       &kp UP_ARROW     &kp RIGHT    &kp LC(W)  &kp LC(T)
+&trans  &trans           &trans        &trans         &trans         &trans    &trans    &kp PAGE_DOWN  &kp PAGE_UP      &trans       &trans     &trans
+                                       &trans         &trans         &trans    &trans    &trans         &trans
             >;
 
             label = "Evil";
