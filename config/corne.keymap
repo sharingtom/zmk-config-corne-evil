@@ -11,20 +11,6 @@
 
 / {
     behaviors {
-        modmorph_alt_tab: modmorph_alt_tab {
-            compatible = "zmk,behavior-mod-morph";
-            label = "ALT_TAB";
-            bindings = <&kp J>, <&kp TAB>;
-            mods = <(MOD_LALT)>;
-        };
-        
-        modmorph_alt_shift_tab: modmorph_alt_shift_tab {
-            compatible = "zmk,behavior-mod-morph";
-            label = "ALT_SHIFT_TAB";
-            bindings = <&kp K>, <&kp LSHFT &kp TAB>;
-            mods = <(MOD_LALT)>;
-        };
-
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
@@ -200,7 +186,7 @@
 
             bindings = <
 &kp TAB    &kp Q  &kp W  &kp E     &kp R       &kp T        &kp Y        &kp U      &kp I         &kp O    &kp P     &kp BACKSPACE
-&kp LSHFT  &kp A  &kp S  &kp D     &hm LALT F  &kp G        &modmorph_alt_tab &kp H        modmorph_alt_tab J  &modmorph_alt_shift_tab K  &kp L    &kp SEMI  &kp SQT
+&kp LSHFT  &kp A  &kp S  &kp D     &mt LALT F  &kp G        &kp H        &kp J      &kp K         &kp L    &kp SEMI  &kp SQT
 &kp LCTRL  &kp Z  &kp X  &kp C     &kp V       &kp B        &kp N        &kp M      &kp COMMA     &kp DOT  &kp FSLH  &kp RSHFT
                          &kp LGUI  &mo 1       &kp SPACE    &lt 5 ENTER  &lt 2 TAB  &kp LEFT_ALT
             >;
@@ -272,13 +258,10 @@
         };
     };
 
-    // Add Key Overrides for Alt+Tab Behavior
-
-    key_overrides {
+key_overrides {
         compatible = "zmk,key-overrides";
 
-        // J -> Alt+Tab when F is held
-
+        // If Alt (held F) + J => Alt+Tab
         key_override_alt_tab {
             compatible = "zmk,key-override";
             bindings = <&kp TAB>;
@@ -286,8 +269,7 @@
             modifiers = <(MOD_LALT)>;
         };
 
-        // K -> Alt+Shift+Tab when F is held
-
+        // If Alt (held F) + K => Alt+Shift+Tab
         key_override_alt_shift_tab {
             compatible = "zmk,key-override";
             bindings = <&kp LSHFT &kp TAB>;
