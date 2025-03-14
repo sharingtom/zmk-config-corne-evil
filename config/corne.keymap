@@ -1,7 +1,6 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/keys.h>
 
 #define DEF 0
 #define NAV 1
@@ -168,6 +167,11 @@
             bindings = <&paragreat>;
             key-positions = <20 21>;
         };
+
+        Escape {
+            bindings = <&kp ESCAPE>;
+            key-positions = <15 20>;
+        };
     };
 
     //
@@ -258,10 +262,11 @@
         };
     };
 
-key_overrides {
+    key_overrides {
         compatible = "zmk,key-overrides";
 
         // If Alt (held F) + J => Alt+Tab
+
         key_override_alt_tab {
             compatible = "zmk,key-override";
             bindings = <&kp TAB>;
@@ -270,6 +275,7 @@ key_overrides {
         };
 
         // If Alt (held F) + K => Alt+Shift+Tab
+
         key_override_alt_shift_tab {
             compatible = "zmk,key-override";
             bindings = <&kp LSHFT &kp TAB>;
