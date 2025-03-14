@@ -15,14 +15,14 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp J>, <&kp TAB>;
-            mods = <LALT>;
+            mods = <MOD_LALT>;
         };
 
         alt_morph_k: alt_morph_k {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp K>, <&kp LSHIFT TAB>;
-            mods = <LALT>;
+            mods = <MOD_LALT>;
         };
 
         hm: homerow_mods {
