@@ -11,6 +11,20 @@
 / {
     behaviors {
 
+        alt_morph_j: alt_morph_j {
+            compatible = "zmk,behavior-mod-morph";  // Modifier-based key switch
+            #binding-cells = <0>;
+            bindings = <&kp J>, <&kp LGUI &kp LEFT>;  // Normal: J, With Alt: Switch Left
+            mods = <LALT>;  // Activates on Left Alt
+        };
+
+        alt_morph_k: alt_morph_k {
+            compatible = "zmk,behavior-mod-morph";  // Modifier-based key switch
+            #binding-cells = <0>;
+            bindings = <&kp K>, <&kp LGUI &kp RIGHT>;  // Normal: K, With Alt: Switch Right
+            mods = <LALT>;  // Activates on Left Alt
+        };
+
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
@@ -186,7 +200,7 @@
 
             bindings = <
 &kp TAB    &kp Q  &kp W  &kp E     &kp R       &kp T        &kp Y        &kp U      &kp I         &kp O    &kp P     &kp BACKSPACE
-&kp LSHFT  &kp A  &kp S  &kp D     &mt LALT F  &kp G        &kp H        &mm LALT &kp TAB &kp J      &kp K         &kp L    &kp SEMI  &kp SQT
+&kp LSHFT  &kp A  &kp S  &kp D     &mt LALT F  &kp G        &kp H        &alt_morph_j      &alt_morph_k         &kp L    &kp SEMI  &kp SQT
 &kp LCTRL  &kp Z  &kp X  &kp C     &kp V       &kp B        &kp N        &kp M      &kp COMMA     &kp DOT  &kp FSLH  &kp RSHFT
                          &kp LGUI  &mo 1       &kp SPACE    &lt 5 ENTER  &lt 2 TAB  &kp LEFT_ALT
             >;
