@@ -12,17 +12,17 @@
     behaviors {
         // j -> 'j' normally, but if ALT is pressed, become TAB
         alt_morph_j = &mm {
-            from-mods = <(LALT)>;
-            to = <&kp TAB>;
-            fallback = <&kp J>;
+            from-mods = <LALT>;
+            to = &kp TAB;
+            fallback = &kp J;
         };
 
         // k -> 'k' normally, but if ALT is pressed, become Shift+Tab
         // In ZMK, "Shift+Tab" is done by &kp LS(TAB)
         alt_morph_k = &mm {
-            from-mods = <(LALT)>;
-            to = <&kp LS(TAB)>;
-            fallback = <&kp K>;
+            from-mods = <LALT>;
+            to = &ks LS TAB;
+            fallback = &kp K;
         };
 
         hm: homerow_mods {
