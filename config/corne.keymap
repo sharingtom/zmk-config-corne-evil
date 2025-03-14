@@ -12,17 +12,17 @@
     behaviors {
 
         alt_morph_j: alt_morph_j {
-            compatible = "zmk,behavior-mod-morph";  // Modifier-based key switch
+            compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp J>, <&kp LGUI &kp LEFT>;  // Normal: J, With Alt: Switch Left
-            mods = <LALT>;  // Activates on Left Alt
+            bindings = <&kp J>, <&kp TAB>;
+            mods = <LALT>;
         };
 
         alt_morph_k: alt_morph_k {
-            compatible = "zmk,behavior-mod-morph";  // Modifier-based key switch
+            compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp K>, <&kp LGUI &kp RIGHT>;  // Normal: K, With Alt: Switch Right
-            mods = <LALT>;  // Activates on Left Alt
+            bindings = <&kp K>, <&kp LSHIFT TAB>;
+            mods = <LALT>;
         };
 
         hm: homerow_mods {
