@@ -73,11 +73,6 @@
     combos {
         compatible = "zmk,combos";
 
-        escape {
-            bindings = <&kp ESCAPE>;
-            key-positions = <13 29>;
-        };
-
         delete {
             bindings = <&kp DELETE>;
             key-positions = <15 21>;
@@ -168,7 +163,7 @@
             key-positions = <20 21>;
         };
 
-        Escape {
+        escape {
             bindings = <&kp ESCAPE>;
             key-positions = <15 20>;
         };
@@ -259,28 +254,6 @@
             >;
 
             label = "Evil";
-        };
-    };
-
-    key_overrides {
-        compatible = "zmk,key-overrides";
-
-        // If Alt (held F) + J => Alt+Tab
-
-        key_override_alt_tab {
-            compatible = "zmk,key-override";
-            bindings = <&kp TAB>;
-            key = <&kp J>;
-            modifiers = <(MOD_LALT)>;
-        };
-
-        // If Alt (held F) + K => Alt+Shift+Tab
-
-        key_override_alt_shift_tab {
-            compatible = "zmk,key-override";
-            bindings = <&kp LSHFT &kp TAB>;
-            key = <&kp K>;
-            modifiers = <(MOD_LALT)>;
         };
     };
 
